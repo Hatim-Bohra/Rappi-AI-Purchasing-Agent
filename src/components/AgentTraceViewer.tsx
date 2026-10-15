@@ -139,13 +139,13 @@ export const AgentTraceViewer: React.FC<AgentTraceViewerProps> = ({
                   {isExpanded && (
                     <div className="mt-2 space-y-2">
                       <div className="bg-slate-900 text-slate-200 p-2.5 rounded font-mono text-[11px] overflow-x-auto">
-                        <span className="text-slate-400">// Parameters passed:</span>
+                        <span className="text-slate-400">{"// Parameters passed:"}</span>
                         <pre className="mt-1">{JSON.stringify(step.toolCall!.params, null, 2)}</pre>
                       </div>
 
                       {step.observation && (
                         <div className="bg-slate-900 text-emerald-300 p-2.5 rounded font-mono text-[11px] overflow-x-auto">
-                          <span className="text-slate-400">// ERP Observation returned:</span>
+                          <span className="text-slate-400">{"// ERP Observation returned:"}</span>
                           <pre className="mt-1">{JSON.stringify(step.observation, null, 2)}</pre>
                         </div>
                       )}
