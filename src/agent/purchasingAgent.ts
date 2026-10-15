@@ -348,8 +348,11 @@ export class PurchasingAgent {
     // ========================================================
     let totalOrderCostUsd = 0;
     let totalOrderVolumeM3 = 0;
-
-    if (validationResult.isValid && decidedDecision !== "ESCALATE_TO_HUMAN" && decidedDecision !== "REJECT") {
+    if (
+      validationResult.isValid &&
+      (decidedDecision as AgentDecisionType) !== "ESCALATE_TO_HUMAN" &&
+      (decidedDecision as AgentDecisionType) !== "REJECT"
+    ) {
       if (decidedDecision !== "SPLIT_SUPPLIERS") {
         const product = erpDb.getProduct(sku);
         const supplier = erpDb.getSupplier(chosenSupplierId);
